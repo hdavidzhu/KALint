@@ -1,0 +1,27 @@
+{
+  "name": "ka-lint",
+  "version": "1.0.0",
+  "description": "Simple linter API for Javascript online.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hdavidzhu/KALint.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hdavidzhu/KALint/issues"
+  },
+  "homepage": "https://github.com/hdavidzhu/KALint#readme",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "codemirror": "^5.10.0",
+    "esprima": "^2.7.1",
+    "gulp": "^3.9.0",
+    "http-server": "^0.8.5",
+    "mocha": "^2.3.4"
+  }
+}
