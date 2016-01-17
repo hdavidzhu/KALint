@@ -10,8 +10,8 @@
         var chosenCondition = conditions[condIndex];
 
         // TODO: Maybe just pass in ESTree?
-        var validCount = searchForConditionInTree(esTree.body, chosenCondition);
-        var difference = diffCountWithCondition(validCount, chosenCondition);
+        var validCount = this.searchForConditionInTree(esTree.body, chosenCondition);
+        var difference = this.diffCountWithCondition(validCount, chosenCondition);
       }
 
       onErrorCallback(difference);
@@ -43,7 +43,7 @@
     },
 
     diffCountWithCondition: function(validCount, condition) {
-      var conditionCount = condition.exactly || condtion.lessThan || condition.greaterThan;
+      var conditionCount = condition.exactly || condition.lessThan || condition.greaterThan;
       return validCount - conditionCount;
     }
   };
