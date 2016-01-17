@@ -1,8 +1,8 @@
 var esprima = require('esprima');
-var KALinter = require('./ka_linter').KALinter;
+var KALint = require('./ka_lint').KALint;
 
 var esTree = esprima.parse("var answer = 42");
-KALinter.lint(esTree, [
+KALint.lint(esTree, [
   {
     type: "VariableDeclaration",
     exactly: 1

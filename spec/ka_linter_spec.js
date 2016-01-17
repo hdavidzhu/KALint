@@ -4,8 +4,10 @@ var sinonChai = require("sinon-chai");
 var expect = chai.expect;
 chai.use(sinonChai);
 
-describe("KALinter", function() {
+var testCodeAndConditions = require('./test_code_and_condtions');
+
+describe("KALint", function() {
   describe(".lint", function() {
-    
+
   });
 });

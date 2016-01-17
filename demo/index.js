@@ -10,7 +10,7 @@ function logCode() {
     // TODO: Enter options here.
   });
 
-  KALinter.lint(esprimadCode, [
+  KALint.lint(esprimadCode, [
     {
       type: "VariableDeclaration",
       exactly: 1
