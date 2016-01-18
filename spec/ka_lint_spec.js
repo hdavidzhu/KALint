@@ -12,9 +12,10 @@ describe("KALint", function() {
   describe(".lint", function() {
     it("outputs no errors for accurate whitelist conditions", function() {
       var esTree = esprima.parse(testRes.whitelistCode_1);
-      KALint.lint(esTree, testRes.whiteListCond_1, function(error) {
+      var errors = KALint.lint(esTree, testRes.whiteListCond_1, function(error) {
         console.log(error);
       });
+      expect(errors.length).to.equal(0);
     });
 
     it("outputs no errors for accurate blacklist conditions", function() {
