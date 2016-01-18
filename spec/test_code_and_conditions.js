@@ -15,6 +15,17 @@ module.exports = {
     },
   ],
 
+  whiteListCond_2: [
+    {
+      "type": "ForStatement",
+      "greaterThan": 0
+    },
+    {
+      "type": "WhileStatement",
+      "greaterThan": 0
+    },
+  ],
+
   blacklistCode_1: "x++;",
   blacklistCode_2: "for (var x=0; x<9; x++) {}",
   blacklistCode_3: "var x;",
