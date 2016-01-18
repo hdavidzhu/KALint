@@ -5,8 +5,14 @@
     // with additional flags.
     // Returns: Array of errors if any are present.
     // TODO: Document those flags.
-    lint: function(esTree, conditions, onErrorCallback) {
+    lint: function(esTree, _conditions, onErrorCallback) {
+      var conditions = _conditions;
       var errors = [];
+
+      // Constrain input to handle arrays.
+      if (conditions.constructor !== Array) {
+        conditions = [conditions];
+      }
 
       for (var condIndex = 0; condIndex < conditions.length; condIndex++) {
         var chosenCondition = conditions[condIndex];
@@ -44,7 +50,7 @@
         }
 
         // DFS the node's children for our required conditions.
-        validCount = this.searchForConditionInTree(node, validCount);
+        validCount = this.searchForConditionInTree(node, condition, validCount);
       }
 
       return validCount;
@@ -83,7 +89,9 @@
       }
 
       if (error) {
-        callback(error);
+        if (callback) {
+          callback(error);
+        }
         return error;
       }
     }

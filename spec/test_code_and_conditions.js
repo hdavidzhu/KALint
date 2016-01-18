@@ -19,7 +19,7 @@ module.exports = {
   blacklistCode_2: "for (var x=0; x<9; x++) {}",
   blacklistCode_3: "var x;",
 
-  blackListCond_1: [
+  blacklistCond_1: [
     {
       "type": "ForStatement",
       "lessThan": 0
