@@ -5,7 +5,7 @@ var testGlob = 'spec/**/*.js';
 
 gulp.task('test', function() {
   return gulp
-    .src('spec/**/*.js', {read: false})
+    .src([srcGlob, testGlob], {read: false})
     .pipe(mocha({
       reporter: 'spec'
     }));

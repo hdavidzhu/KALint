@@ -1,4 +1,4 @@
-module.exports = {
+var myExport = {
 
   whitelistCode_1: "for (var x=0; x<9; x++) {}\n var y;",
   whitelistCode_2: "var y; \n for (var x=0; x<9; x++) {}",
@@ -15,11 +15,22 @@ module.exports = {
     },
   ],
 
+  whiteListCond_2: [
+    {
+      "type": "ForStatement",
+      "greaterThan": 0
+    },
+    {
+      "type": "WhileStatement",
+      "greaterThan": 0
+    },
+  ],
+
   blacklistCode_1: "x++;",
   blacklistCode_2: "for (var x=0; x<9; x++) {}",
   blacklistCode_3: "var x;",
 
-  blackListCond_1: [
+  blacklistCond_1: [
     {
       "type": "ForStatement",
       "lessThan": 0
@@ -40,4 +51,10 @@ module.exports = {
       "greaterThan": 0
     }
   }
+};
+
+if(window !== undefined) {
+  window.myExport = myExport;
+} else {
+  module.exports = myExport;
 }
