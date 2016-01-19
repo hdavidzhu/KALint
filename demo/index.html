@@ -8,10 +8,14 @@
   <body>
 
     <div id="code-block"></div>
-    <button onclick="logCode();">Submit</button>
+    <button onclick="lint();">Submit</button>
+    <div id="errors"></div>
 
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="../node_modules/codemirror/lib/codemirror.js"></script>
     <script src="https://cdn.rawgit.com/jquery/esprima/2.7.1/esprima.js"></script>
+
+    <script src="../spec/test_code_and_conditions.js"></script>
     <script src="../src/ka_lint.js"></script>
     <script src="index.js"></script>
   </body>

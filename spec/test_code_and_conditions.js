@@ -1,4 +1,4 @@
-module.exports = {
+var myExport = {
 
   whitelistCode_1: "for (var x=0; x<9; x++) {}\n var y;",
   whitelistCode_2: "var y; \n for (var x=0; x<9; x++) {}",
@@ -51,4 +51,10 @@ module.exports = {
       "greaterThan": 0
     }
   }
+};
+
+if(window !== undefined) {
+  window.myExport = myExport;
+} else {
+  module.exports = myExport;
 }
