@@ -6,7 +6,7 @@ var expect = chai.expect;
 chai.use(sinonChai);
 
 var KALint = require('../src/ka_lint').KALint;
-var testRes = require('./test_code_and_conditions').myExport;
+var testRes = require('./test_code_and_conditions').exampleLint;
 
 describe("KALint", function() {
   describe(".lint", function() {

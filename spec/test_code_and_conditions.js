@@ -1,5 +1,5 @@
 (function(exports) {
-  exports.myExport = {
+  exports.exampleLint = {
 
     whitelistCode_1: "for (var x=0; x<9; x++) {}\n var y;",
     whitelistCode_2: "var y; \n for (var x=0; x<9; x++) {}",

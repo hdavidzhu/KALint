@@ -1,7 +1,7 @@
 var $errors = $("#errors");
 
 var myCodeMirror = CodeMirror(document.getElementById("code-block"), {
-  value: myExport.whitelistCode_1,
+  value: exampleLint.whitelistCode_1,
   mode: "javascript",
   lineNumbers: true
 });
@@ -19,7 +19,7 @@ function lint() {
     var errors = esprimadCode.errors;
 
     // Lint the code and emit any errors.
-    KALint.lint(esprimadCode, myExport.roughStructureCond_2, function(error) {
+    KALint.lint(esprimadCode, exampleLint.roughStructureCond_2, function(error) {
       // This callback gets called whenever an error is detected in runtime.
       $errors.append(error.message + "<br>");
     });
