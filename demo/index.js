@@ -1,7 +1,7 @@
 var $errors = $("#errors");
 
 var myCodeMirror = CodeMirror(document.getElementById("code-block"), {
-  value: "var x = 4;",
+  value: myExport.whitelistCode_1,
   mode: "javascript",
   lineNumbers: true
 });
@@ -17,15 +17,14 @@ function lint() {
     // Convert code and detect errors.
     var esprimadCode = esprima.parse(code, { tolerant: true });
     var errors = esprimadCode.errors;
-    $errors.append(errors.length);
 
     // Lint the code and emit any errors.
-    KALint.lint(esprimadCode, myExport.whiteListCond_1, function(error) {
+    KALint.lint(esprimadCode, myExport.roughStructureCond_2, function(error) {
       // This callback gets called whenever an error is detected in runtime.
-      $errors.append(error.error);
+      $errors.append(error.message + "<br>");
     });
   } catch(e) {
-    $errors.append(e.toString());
+    $errors.append(e.toString() + "<br>");
   }
 }
 
@@ -47,6 +46,6 @@ function debounce(func, wait, immediate) {
 }
 
 // Run.
-logCode();
-var debouncedLogCode = debounce(logCode, 250);
-$("#code-block").on("input", debouncedLogCode);
+lint();
+var debouncedLint = debounce(lint, 250);
+$("#code-block").on("keydown", debouncedLint);
