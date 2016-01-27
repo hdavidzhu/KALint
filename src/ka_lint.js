@@ -36,7 +36,7 @@
 
   // Given a single condition, recursively go through tree and count instances.
   exports.KALint.searchForConditionInTree = function(node, condition, _validCount) {
-    var treeBody = node.body;
+    var treeBody = node.body || node.consequent;
     var validCount = _validCount ? _validCount : 0;
 
     // Return our count when no more children are detected.
